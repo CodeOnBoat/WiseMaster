@@ -1,7 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { SafeAreaView } from "react-native";
+import { Text, TouchableOpacity, useColorScheme } from "react-native";
 import AppNavigation from "./src/navigation";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
-  return <AppNavigation />;
+  let colorScheme = useColorScheme();
+
+  return (
+    <SafeAreaProvider>
+      <AppNavigation />
+    </SafeAreaProvider>
+  );
 }
